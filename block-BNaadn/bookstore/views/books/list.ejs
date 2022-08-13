@@ -1,0 +1,33 @@
+<%- include('./../partials/header') -%>
+    <main>
+        <section class="hero-Sec">
+            <h1>Books</h1>
+        </section>
+        <section style="text-align:right" class="m-right-20">
+            <a href="/books/new" class="btn m-top-20">Create New Book</a>
+        </section>
+        <section>
+            <% books.forEach(book=> { %>
+                <div class="card">
+                    <a style="width: 100%" href="/books/<%= book.id %>">
+                        <hr />
+                        <div>Name:
+                            <%= book.title %>
+                        </div>
+                        <div>Name:
+                            <%= book.summary %>
+                        </div>
+                        <div>Pages:
+                            <%= book.pages %>
+                        </div>
+                        <div>Publication:
+                            <%= book.publication %>
+                        </div>
+                        <hr />
+                    </a>
+                </div>
+                <% }) %>
+
+        </section>
+    </main>
+    <%- include('./../partials/footer') -%>
