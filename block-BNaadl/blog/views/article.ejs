@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="/css/style.css" />
+        <title>All Article</title>
+        <style>
+            .footer {
+                position: absolute;
+                bottom: 0;
+                text-align: center;
+                width: 100%;
+                height: 60px;
+                line-height: 60px;
+                font-weight: bold;
+            }
+
+            .card {
+                font-size: 20px;
+
+            }
+
+        </style>
+    </head>
+
+    <body>
+        <header>
+            <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+                <a class="navbar-brand" href="#">Blog</a>
+                <div class="collapse navbar-collapse">
+                    <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Link</a>
+                        </li>
+                    </ul>
+                    <div class="my-2 my-lg-0">
+                        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                    </div>
+                </div>
+            </nav>
+        </header>
+
+        <main class="container">
+
+            <div class="card mt-5">
+                <div class="card-header">
+                    <%= article.title %>
+                </div>
+                <div class="card-body">
+                    <div>Title : <%= article.title %>
+                    </div>
+                    <div>Description : <%= article.description %>
+                    </div>
+                    <div>Tags : <%= article.tags %>
+                    </div>
+                    <div>Author : <%= article.author %>
+                    </div>
+                    <div>Likes :
+                        <a class="btn btn-outline-primary" href="/articles/<%= article.id %>/decrement">-</a>
+                        <%= article.likes %>
+                            <a class="btn btn-outline-success" href="/articles/<%= article.id %>/increment">+</a>
+                    </div>
+                </div>
+                <div class="card-footer">
+
+                    <a href="/articles/<%= article.id %>/edit" class="btn btn-warning">Edit</a>
+                    <a href="/articles/<%= article.id %>/delete" class="btn btn-danger">Delete</a>
+                </div>
+
+            </div>
+
+        </main>
+        <footer class=" footer bg-dark text-white">
+            <div class="container-fluid">
+                <span class="text-muted">All Right Reserved</span>
+            </div>
+        </footer>
+
+    </body>
+
+</html>
