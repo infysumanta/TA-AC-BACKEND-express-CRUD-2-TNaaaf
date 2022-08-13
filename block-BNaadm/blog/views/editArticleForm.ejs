@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="/css/style.css" />
+        <title>Crete New Article</title>
+        <style>
+            .footer {
+                position: absolute;
+                bottom: 0;
+                text-align: center;
+                width: 100%;
+                height: 60px;
+                line-height: 60px;
+                font-weight: bold;
+            }
+
+        </style>
+    </head>
+
+    <body>
+        <header>
+            <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+                <a class="navbar-brand" href="#">Blog</a>
+                <div class="collapse navbar-collapse">
+                    <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Link</a>
+                        </li>
+                    </ul>
+                    <div class="my-2 my-lg-0">
+                        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                    </div>
+                </div>
+            </nav>
+        </header>
+
+        <main class="container">
+            <div class="mt-2 mb-5 alert alert-primary">
+                <h1 class="text-center">Create New Article</h1>
+            </div>
+            <form action="/articles/<%= article.id %>" method="post">
+                <div class="form-group">
+                    <label for="title">Title</label>
+                    <input type="text" class="form-control" id="title" name="title" value="<%= article.title %>"
+                        placeholder="Title">
+                </div>
+                <div class="form-group">
+                    <label for="description">Description</label>
+                    <textarea class="form-control" id="description" name="description"
+                        rows="3"><%= article.description %></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="tags">Tags</label>
+                    <input type="text" class="form-control" id="tags" name="tags" value="<%= article.tags %>"
+                        placeholder="Tags">
+                </div>
+                <div class="form-group">
+                    <label for="author">Author</label>
+                    <input type="text" class="form-control" id="author" name="author" value="<%= article.author %>"
+                        placeholder="Author">
+                </div>
+                <div class="form-group">
+                    <label for="likes">Likes</label>
+                    <input type="number" class="form-control" id="likes" name="likes" value="<%= article.likes %>"
+                        placeholder="Likes">
+                </div>
+                <button type="submit" class="btn btn-primary btn-lg btn-block">Submit</button>
+        </main>
+        <footer class="footer bg-dark text-white">
+            <div class="container-fluid">
+                <span class="text-muted">All Right Reserved</span>
+            </div>
+        </footer>
+
+    </body>
+
+</html>
